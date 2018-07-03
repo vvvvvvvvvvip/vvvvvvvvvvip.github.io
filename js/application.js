@@ -4,15 +4,13 @@
   if(audio === "ended"){
     audio.play();
   }
-  var formSubscribe, loadApplication, photoSection, svgInjector, worksFilter;
+  var formSubscribe, loadApplication, svgInjector, worksFilter;
 
   loadApplication = function() {
     var styles;
     styles = ["background: #7b77c9", "color: white", "display: block", "padding: 20px 20px 20px 20px", "text-align: center", "font-weight: normal", "font-size: 20px", "line-height: 60px"].join(";");
-    // console.log('%c Lithium Loaded :)', styles, 'For usage visit: https://github.com/owldesign/3.-Lithium');
     $(svgInjector);
     $(worksFilter);
-    $(photoSection);
     $(formSubscribe);
     $('.arrow-down').on('click', function(e) {
       e.preventDefault();
@@ -55,11 +53,6 @@
         return $mobileFilterBtn.removeClass('opened');
       }
     });
-    // $workItem.on('click', function() {
-    //   var url;
-    //   url = $(this).data('url');
-    //   return window.location.href = url;
-    // });
     $grid.shuffle({
       itemSelector: $workItem,
       sizer: $sizer
@@ -123,17 +116,6 @@
       });
     }
   };
-
-  photoSection = function() {
-    var $photoItem;
-    $photoItem = $('.photo-item');
-    return $photoItem.on('click', function() {
-      var url;
-      url = $(this).data('url');
-      return window.location.href = url;
-    });
-  };
-
   $(loadApplication);
 
 }).call(this);
